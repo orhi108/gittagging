@@ -30,12 +30,16 @@ current_braanch=repo.head.reference.name
 #if the current brunch is different than master then adding that branch name to the list with tags 
 if current_braanch != "master":
 	tags.append(current_braanch)
-	
+
 #creating all the git tags 
 for tag in tags:
-  	repo.create_tag(tag)
+	repo.create_tag(tag)
 
 #commiting 
+#dir(repo)
 repo.head.reference.commit
-dir(repo.head.reference.push)
+#dir(repo.head.push())
+#repo.git.push("origin", repo.head.reference)
+origin = repo.remotes.origin
+origin.push("--tags")
 print(tags)
