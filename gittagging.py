@@ -39,7 +39,7 @@ for tag in tags:
 #dir(repo)
 repo.head.reference.commit
 #dir(repo.head.push())
-repo.git.push("origin", repo.head.reference)
-#origin=repo.remote('origin')
-#origin.push()
+#repo.git.push("origin", repo.head.reference)
+origin = repo.remotes.origin
+origin.push("--tags")
 print(tags)
