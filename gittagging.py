@@ -33,13 +33,15 @@ if current_braanch != "master":
 
 #creating all the git tags 
 for tag in tags:
-	repo.create_tag(tag)
-
+  try:
+    repo.create_tag(tag)
+    print("Tag name {} has been created successfully".format(tag))
+  except:
+    print("Tag name {} already exist. Creation will be skipped".format(tag))
 #commiting 
-#dir(repo)
 repo.head.reference.commit
-#dir(repo.head.push())
-#repo.git.push("origin", repo.head.reference)
+
+#and pushung the newly created tags to the origin
 origin = repo.remotes.origin
 origin.push("--tags")
-print(tags)
+
