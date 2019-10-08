@@ -36,6 +36,10 @@ for tag in tags:
 	repo.create_tag(tag)
 
 #commiting 
+#dir(repo)
 repo.head.reference.commit
-
+#dir(repo.head.push())
+repo.git.push("origin", repo.head.reference)
+#origin=repo.remote('origin')
+#origin.push()
 print(tags)
