@@ -39,7 +39,7 @@ git clone https://github.com/orhi108/gittagging.git
 cd <your project git local repo>
 cp /tmp/gittagging/gittaggin.py .
 chmod +x gittaggin.py
-./gittagging [<optional tag name>]
+./gittagging.py [<optional tag name>]
 ```
 
  
