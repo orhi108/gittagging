@@ -18,13 +18,13 @@ $ ./gittagging.py [tagname]     ; - optional tag name
 
 ### Ubuntu/Debian
 ```bash
-apt install python3 python3-pip git 
+apt install python3.7 python3.7-pip git 
 pip3 install GitPython
 ```
 
 ### RHEL/CentOS
 ```bash
-yum install python3 python3-pip git
+yum install python3.7 python3.7-pip git
 pip3 install GitPython
 ```
 
