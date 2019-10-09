@@ -34,4 +34,4 @@ for tag in tags:
 #pushing newly created tags to the origin
 origin = repo.remotes.origin
 origin.push("--tags")
-print("Following tags {} have been pushed to origin {}".format(tags, origin))
+print("Following tags {} have been pushed to origin {}".format(tags, current_branch))
