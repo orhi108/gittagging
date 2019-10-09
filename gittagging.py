@@ -29,9 +29,13 @@ if current_braanch != "master":
 
 #creating all the git tags 
 for tag in tags:
-	repo.create_tag(tag)
+	try:
+	  repo.create_tag(tag)
+	  print("Tag with name [{}] has been creted successfully".format(tag))
 
+	except:
+	  print("Tag with name [{}] already exist. Recreation will be skipped".format(tag))
+	 
 #pushing newly created tags to the origin
 origin = repo.remotes.origin
 origin.push("--tags")
-print("Following tags {} have been pushed to origin {}".format(tags, current_branch))
