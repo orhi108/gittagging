@@ -3,20 +3,16 @@ from git import Repo
 from datetime import datetime
 import sys
 
-
 #declaring tags list
 tags=[]
 
-
 # if one argument is provided for tagname then it is added to the list 
-if len(sys.argv) == 2: 
+if len(sys.argv) >= 2: 
 	tags.append(sys.argv[1])
 
 # adding to the list with tags formatted current date and time
 now = datetime.now()
 tags.append(now.strftime("%Y-%m-%d-%H-%M-%S"))
-
-
 
 #creationg repo object for the repo in current directory 
 try:
@@ -35,11 +31,7 @@ if current_braanch != "master":
 for tag in tags:
 	repo.create_tag(tag)
 
-#commiting 
-#dir(repo)
-repo.head.reference.commit
-#dir(repo.head.push())
-#repo.git.push("origin", repo.head.reference)
+#pushing newly created tags to the origin
 origin = repo.remotes.origin
 origin.push("--tags")
-print(tags)
+print("Following tags {} have been pushed to origin {}".format(tags, origin))
