@@ -1,5 +1,6 @@
-# gittagging
+# Gittagging tool 
 
+```
 Welcome to git repo tagging tool 
 This is a git tool which will create tagging to your master or other current branches. 
 
@@ -11,6 +12,7 @@ It creates three different tags
 
 Syntax:
 $ ./gittagging.py [tagname]     ; - optional tag name  
+```
 
 ## Prerequisites
 
