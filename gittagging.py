@@ -31,10 +31,11 @@ if current_braanch != "master":
 for tag in tags:
 	try:
 	  repo.create_tag(tag)
-	  print("The tag [{}] has been creted successfully".format(tag))
+	  print("Tag with name [{}] has been creted successfully".format(tag))
+
 	except:
-	  print("The tag [{}] alredy exist. Recreation will be skipped".format(tag))
+	  print("Tag with name [{}] already exist. Recreation will be skipped".format(tag))
+	 
 #pushing newly created tags to the origin
 origin = repo.remotes.origin
 origin.push("--tags")
-print("Following tags {} have been pushed to origin {}".format(tags, origin))
